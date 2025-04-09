@@ -4,7 +4,7 @@ import vectors from "./vectors.json" with { type: "json" };
 
 const s16_b = (hex: string) =>
   Uint8Array.from(hex.match(/../g) ?? [], (Z) => parseInt(Z, 16));
-Deno.test("xchacha20_poly1305", () => {
+Deno.test(function xchacha20_poly1305() {
   for (let z = 0; z < vectors.testGroups.length; ++z) {
     const a = vectors.testGroups[z].tests;
     for (let y = 0; y < a.length; ++y) {
