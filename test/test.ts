@@ -1,6 +1,6 @@
 import { assertEquals } from "@std/assert";
 import { poly_xchacha, xchacha_poly } from "../main.ts";
-import vectors from "./vectors.json" with { type: "json" };
+import vectors from "./wycheproof_xchachapoly.json" with { type: "json" };
 
 const s16_b = (hex: string) =>
   Uint8Array.from(hex.match(/../g) ?? [], (Z) => parseInt(Z, 16));
