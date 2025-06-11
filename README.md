@@ -5,7 +5,7 @@ Encrypt and decrypt, with authentication and additional data
 
 ```ts
 import { decrypt, encrypt } from "@nyoon/xchacha-poly";
-import { assertEquals } from "@std/assert";
+import { assertEquals } from "jsr:@std/assert@^1.0.13";
 
 const key = crypto.getRandomValues(new Uint8Array(32));
 const text = new TextEncoder().encode("secret plaintext");
