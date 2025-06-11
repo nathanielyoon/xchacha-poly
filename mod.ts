@@ -190,12 +190,13 @@ const tag = (key: Uint32Array, $: Uint8Array, data: Uint8Array) => {
   f[e + 3] = b >> 24, f[e + 8] = c, f[e + 9] = c >> 8, f[e + 10] = c >> 16;
   return f[e + 11] = c >> 24, poly(a, f);
 };
-const xchachapoly = (
+/** Encrypts directly, exposed for testing. */
+export const xchachapoly = (
   key: Uint8Array,
   iv: Uint8Array,
   $: Uint8Array,
   data: Uint8Array,
-) => {
+): Uint8Array | null => {
   if (key.length !== 32 || iv.length !== 24) return null;
   const a = new Uint32Array(16), b = new DataView(iv.buffer, iv.byteOffset);
   const c = hchacha(a, new DataView(key.buffer, key.byteOffset), b);
@@ -203,12 +204,13 @@ const xchachapoly = (
   const d = $.length, e = new Uint8Array(d + 16);
   return xor(c, b, $, e), e.set(tag(a, e.subarray(0, d), data), d), e;
 };
-const polyxchacha = (
+/** Decrypts directly, exposed for testing. */
+export const polyxchacha = (
   key: Uint8Array,
   iv: Uint8Array,
   $: Uint8Array,
   data: Uint8Array,
-) => {
+): Uint8Array | null => {
   if (key.length !== 32 || iv.length !== 24) return null;
   const a = new Uint32Array(16), b = new DataView(iv.buffer, iv.byteOffset);
   const c = hchacha(a, new DataView(key.buffer, key.byteOffset), b);

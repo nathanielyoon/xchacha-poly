@@ -1,10 +1,14 @@
 {
   "version": "5",
   "specifiers": {
+    "jsr:@nyoon/base@^1.0.2": "1.0.2",
     "jsr:@std/assert@^1.0.13": "1.0.13",
     "jsr:@std/internal@^1.0.6": "1.0.8"
   },
   "jsr": {
+    "@nyoon/base@1.0.2": {
+      "integrity": "3ff85f6d055adc68bdf1807a32bc422aaa3fbe88b0a75e929c6b5c6cb56b0cb0"
+    },
     "@std/assert@1.0.13": {
       "integrity": "ae0d31e41919b12c656c742b22522c32fb26ed0cba32975cb0de2a273cb68b29",
       "dependencies": [
@@ -15,8 +19,12 @@
       "integrity": "fc66e846d8d38a47cffd274d80d2ca3f0de71040f855783724bb6b87f60891f5"
     }
   },
+  "remote": {
+    "https://gist.githubusercontent.com/nathanielyoon/b22d20cfec1374cf902d5c1cb85b8cfe/raw/1c5cab139e84235755fc4f46a7aaf65f7be22611/hex.ts": "b1cfa67606c1599a959bdf29964eb6d72d0775e2d17773824ac0ca9be25d9d78"
+  },
   "workspace": {
     "dependencies": [
+      "jsr:@nyoon/base@^1.0.2",
       "jsr:@std/assert@^1.0.13"
     ]
   }
