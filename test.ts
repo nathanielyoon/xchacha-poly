@@ -1,6 +1,6 @@
 import { hex } from "@nyoon/base/16";
 import { assertEquals } from "@std/assert";
-import { polyxchacha, xchachapoly } from "@nyoon/xchacha-poly";
+import { polyxchacha, xchachapoly } from "./mod.ts";
 
 Deno.test("wycheproof", () =>
   fetch(
